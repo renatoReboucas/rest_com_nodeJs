@@ -3,7 +3,11 @@ const routes = express.Router()
 
 const AtendimentoController = require('./controller/AtendimentoController')
 
-routes.get('/', (req, res) => res.send('Servidor  ok!'))
+routes.post('/', (req, res) => {
+  console.log(req.body) 
+  res.send('Servidor  ok!')
+  
+})
 
 routes.post('/atendimentos', AtendimentoController.store)
 
